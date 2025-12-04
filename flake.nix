@@ -12,6 +12,7 @@
     let
       system = "x86_64-linux";
       lib = nixpkgs.lib;
+      pkgs = nixpkgs.legacyPackages.${system};
     in {
       nixosConfigurations.elitebook = lib.nixosSystem {
         inherit system;
@@ -20,5 +21,14 @@
           ./hosts/elitebook/configuration.nix
         ];
       };
+
+      homeConfigurations."gab@elitebook" =
+        home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = { inherit inputs; };
+          modules = [
+            ./modules/home/gab.nix
+          ];
+        };
     };
 }

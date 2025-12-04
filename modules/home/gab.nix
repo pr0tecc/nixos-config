@@ -15,7 +15,7 @@
 
   imports = [
     ../shell/git.nix
-    # ../shell/zsh.nix
+    ../shell/zsh.nix
     # ../shell/direnv.nix
   ];
 
@@ -23,6 +23,7 @@
 
   home.packages = with pkgs; [
     kdePackages.kate
+    paper-plane
     # Add personal tools here
   ];
 }

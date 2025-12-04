@@ -20,6 +20,7 @@
     isNormalUser = true;
     description = "Gabriel";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
   };
 
   # Home Manager configuration for user gab

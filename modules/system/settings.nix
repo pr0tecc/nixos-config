@@ -2,28 +2,22 @@
 
 {
   ##### Bootloader #####
-
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/efi";
   boot.loader.systemd-boot.xbootldrMountPoint = "/boot";
 
   ##### Networking #####
-
   # NetworkManager for network management
   networking.networkmanager.enable = true;
 
   ##### Nix / flakes #####
-
   # Enable Nix command and flakes globally
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   ##### Time and locale #####
-
   time.timeZone = "Europe/Berlin";
-
   i18n.defaultLocale = "en_US.UTF-8";
-
   i18n.extraLocaleSettings = {
     LC_ADDRESS        = "de_DE.UTF-8";
     LC_IDENTIFICATION = "de_DE.UTF-8";
@@ -37,11 +31,13 @@
   };
 
   ##### Graphical stack #####
-
   # X11 + Plasma
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
+
+  # Tell Xorg which drivers to use, including DisplayLink
+  services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
 
   # X11 keymap
   services.xserver.xkb = {
@@ -53,11 +49,9 @@
   console.keyMap = "de-latin1-nodeadkeys";
 
   ##### Printing #####
-
   services.printing.enable = true;
 
   ##### Audio (PipeWire) #####
-
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
