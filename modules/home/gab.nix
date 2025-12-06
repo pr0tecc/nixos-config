@@ -23,7 +23,7 @@
 
   home.packages = with pkgs; [
     kdePackages.kate
-    paper-plane
+    telegram-desktop
     # Add personal tools here
   ];
 }
