@@ -7,6 +7,7 @@
     gptfdisk
     brave
     displaylink
+    kdePackages.kate
     # Add further system tools here
   ];
 

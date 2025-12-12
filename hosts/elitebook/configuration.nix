@@ -28,6 +28,9 @@
     useGlobalPkgs = true;
     useUserPackages = true;
 
+    # Make `inputs` available inside Home Manager modules (gab.nix)
+    extraSpecialArgs = { inherit inputs; };
+
     users.gab = import ../../modules/home/gab.nix;
   };
 
