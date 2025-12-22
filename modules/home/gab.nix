@@ -22,11 +22,11 @@
   #### User packages ####
 
   home.packages = with pkgs; [
-    telegram-desktop
-    altus
-
     # Home Manager CLI, pinned to the same input as your module
     inputs.home-manager.packages.${pkgs.stdenv.hostPlatform.system}.home-manager
     # Add personal tools here
+    telegram-desktop
+    altus
+    inputs.claude-desktop.packages.${system}.claude-desktop-with-fhs
   ];
 }
