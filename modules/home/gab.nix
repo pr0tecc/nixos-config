@@ -28,5 +28,8 @@
     telegram-desktop
     altus
     inputs.claude-desktop.packages.${system}.claude-desktop-with-fhs
+
+    # Simplenote from local package definition
+    (pkgs.callPackage ./packages/simplenote.nix {})
   ];
 }
