@@ -7,11 +7,11 @@
 
 let
   pname = "simplenote";
-  version = "2.24.0";
+  version = "2.27.1";
 
   src = fetchurl {
     url = "https://github.com/Automattic/simplenote-electron/releases/download/v${version}/Simplenote-linux-${version}-x86_64.AppImage";
-    sha256 = "sha256-PBNX1W6CV6A6MWdgcdO9y+imreHjDcOF3hgohheTl5k=";
+    sha256 = "sha256-kVRPUePCVT7a+Oo3qw1Ag0UeY2stanTcPmVKjjM9MSM=";
   };
 
   appimageContents = appimageTools.extractType2 { inherit pname version src; };
